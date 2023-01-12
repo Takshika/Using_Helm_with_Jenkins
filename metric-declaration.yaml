@@ -1,0 +1,28 @@
+image:
+  repository: tomkerkhove/promitor-agent-scraper
+  pullPolicy: Always
+  tag:
+
+azureAuthentication:
+  identity:
+    id: "<id>"
+    key: "<key>"
+azureMetadata:
+  tenantId: '<tenantId>'
+  subscriptionId: '<subscriptionId>'
+  resourceGroupName: <resource_group>
+metricDefaults:
+  aggregation:
+    interval: 00:05:00
+  scraping:
+    schedule: "* * * * *"
+metrics:
+  - name: azure_kubernetes_available_cpu_cores
+    description: "Available CPU cores in cluster"
+    resourceType: KubernetesService
+    azureMetricConfiguration:
+      metricName: kube_node_status_allocatable_cpu_cores
+      aggregation:
+        type: Average
+    resources: # Optional, required when no resource discovery is configured
+    - clusterName: <akscluster_name>
