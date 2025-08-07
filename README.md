@@ -70,14 +70,12 @@ Using_Helm_with_Jenkins/
 ### ❗ Known Issues Faced
 While building this integration, I faced the following issues and documented them so others can avoid the same roadblocks:
 
-🔎 Discussion #1751 – Metric Name Confusion
+[Discussion #1751 – Metric Name Confusion](https://github.com/tomkerkhove/promitor/discussions/1751)
 Initially unclear how metric name mapping worked in Promitor.
-
 Resolution: Ensure correct Azure resource type and metric name pairing. Validate against Promitor docs.
 
-🏷️ Discussion #1759 – Missing azurerm_resource_id
+[Discussion #1759 – Missing `azurerm_resource_id`](https://github.com/tomkerkhove/promitor/discussions/1759)
 The azurerm_resource_id label was not appearing in the metrics output.
-
 Resolution: Confirm correct scraping logic and Helm values file setup to ensure the label is included.
 
 ### 📚 Resources
