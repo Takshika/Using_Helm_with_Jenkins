@@ -43,8 +43,8 @@ Jenkins Pipeline
 - Azure credentials configured
 
 ## 📥 Clone the Repo
-git clone https://github.com/Takshika/Using_Helm_with_Jenkins.git
-cd Using_Helm_with_Jenkins
+<pre> ```bash git clone https://github.com/Takshika/Using_Helm_with_Jenkins.git 
+cd Using_Helm_with_Jenkins ``` </pre>
 
 
 ## 🛠 Configure Jenkins
@@ -58,21 +58,17 @@ Customize it to define the Azure metrics you want to monitor.
 This file defines what Promitor scrapes and how the data is exposed.
 
 ## 📁 Folder Structure
-
-Using_Helm_with_Jenkins/
-├── Jenkinsfile                   # CI/CD pipeline stages
-├── metric-declaration.yaml      # Azure-specific metric definitions
-├── helm-deploy.sh               # Shell script for Helm actions
+<pre> ```text Using_Helm_with_Jenkins/ ├── Jenkinsfile # CI/CD pipeline stages ├── metric-declaration.yaml # Azure-specific metric definitions ├── helm-deploy.sh # Shell script for Helm actions ``` </pre>
 
 ## ❗ Known Issues Faced
 While building this integration, I faced the following issues and documented them so others can avoid the same roadblocks:
 
-#🔎 Discussion #1751 – Metric Name Confusion
+🔎 Discussion #1751 – Metric Name Confusion
 Initially unclear how metric name mapping worked in Promitor.
 
 Resolution: Ensure correct Azure resource type and metric name pairing. Validate against Promitor docs.
 
-# 🏷️ Discussion #1759 – Missing azurerm_resource_id
+🏷️ Discussion #1759 – Missing azurerm_resource_id
 The azurerm_resource_id label was not appearing in the metrics output.
 
 Resolution: Confirm correct scraping logic and Helm values file setup to ensure the label is included.
