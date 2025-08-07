@@ -1,28 +1,33 @@
+# Docker image configuration for the Promitor scraper agent
 image:
-  repository: tomkerkhove/promitor-agent-scraper
-  pullPolicy: Always
-  tag:
+  repository: tomkerkhove/promitor-agent-scraper  # Docker image to use for Promitor scraper
+  pullPolicy: Always                              # Always pull the latest image before starting container
+  tag:                                            # Specific tag/version of the image; empty means use latest
 
+# Azure authentication details for accessing Azure Monitor APIs
 azureAuthentication:
   identity:
-    id: "<id>"
-    key: "<key>"
+    id: "<id>"                                   # Your Azure AD application/client ID or managed identity ID
+    key: "<key>"                                 # Corresponding secret or key for authentication
+
+# Metadata about your Azure subscription and tenant
 azureMetadata:
-  tenantId: '<tenantId>'
-  subscriptionId: '<subscriptionId>'
-  resourceGroupName: <resource_group>
+  tenantId: '<tenantId>'                         # Azure Active Directory tenant ID
+  subscriptionId: '<subscriptionId>'             # Azure subscription ID containing your resources
+  resourceGroupName: <resource_group>             # Azure resource group name containing monitored resources
+
+# Default settings for metrics scraping and aggregation
 metricDefaults:
   aggregation:
-    interval: 00:05:00
+    interval: 00:05:00                           # Aggregation interval for metrics (5 minutes here)
   scraping:
-    schedule: "* * * * *"
+    schedule: "* * * * *"                        # Cron schedule for scraping metrics (every minute)
+
+# List of metrics to scrape from Azure Monitor
 metrics:
-  - name: azure_kubernetes_available_cpu_cores
-    description: "Available CPU cores in cluster"
-    resourceType: KubernetesService
+  - name: azure_kubernetes_available_cpu_cores   # Logical name for this metric in Promitor
+    description: "Available CPU cores in cluster" # Human-readable description
+    resourceType: KubernetesService               # Azure resource type (AKS cluster here)
     azureMetricConfiguration:
-      metricName: kube_node_status_allocatable_cpu_cores
-      aggregation:
-        type: Average
-    resources: # Optional, required when no resource discovery is configured
-    - clusterName: <akscluster_name>
+      metricName: kube_node_status_allocatable_cpu_cores  # Exact Azure metric name to scrape
+      aggre

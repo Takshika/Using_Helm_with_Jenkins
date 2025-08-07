@@ -80,14 +80,6 @@ The azurerm_resource_id label was not appearing in the metrics output.
 
 Resolution: Confirm correct scraping logic and Helm values file setup to ensure the label is included.
 
-
-### 🔍 Example Use Case
-Want to monitor an Azure Storage Account's capacity?
-Add a resourceDiscoveryGroup in metric-declaration.yaml
-Define the metrics to scrape
-Run the Jenkins pipeline
-Within minutes, Promitor will expose those metrics to Prometheus
-
 ### 📚 Resources
 - 📘 [Promitor GitHub Repository](https://github.com/tomkerkhove/promitor)
 - 📘 [Promitor Documentation](https://promitor.io/)
