@@ -43,8 +43,10 @@ Jenkins Pipeline
 - Azure credentials configured
 
 ## 📥 Clone the Repo
-```bash git clone https://github.com/Takshika/Using_Helm_with_Jenkins.git  cd Using_Helm_with_Jenkins ```
-
+```
+git clone https://github.com/Takshika/Using_Helm_with_Jenkins.git  
+cd Using_Helm_with_Jenkins
+```
 
 ## 🛠 Configure Jenkins
 Place the Jenkinsfile in your Jenkins job or multibranch pipeline.
@@ -57,7 +59,12 @@ Customize it to define the Azure metrics you want to monitor.
 This file defines what Promitor scrapes and how the data is exposed.
 
 ## 📁 Folder Structure
-```text Using_Helm_with_Jenkins/ ├── Jenkinsfile # CI/CD pipeline stages ├── metric-declaration.yaml # Azure-specific metric definitions ├── helm-deploy.sh # Shell script for Helm actions ``` 
+```
+Using_Helm_with_Jenkins/ 
+├── Jenkinsfile # CI/CD pipeline stages 
+├── metric-declaration.yaml # Azure-specific metric definitions 
+├── helm-deploy.sh # Shell script for Helm actions ``` 
+```
 
 ## ❗ Known Issues Faced
 While building this integration, I faced the following issues and documented them so others can avoid the same roadblocks:
