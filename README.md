@@ -69,10 +69,8 @@ Using_Helm_with_Jenkins/
 
 ### ❗ Known Issues Faced
 While building this integration, I faced the following issues and documented them so others can avoid the same roadblocks:
-```
-[Discussion #1751 – Metric Name Confusion](https://github.com/tomkerkhove/promitor/discussions/1751)
-[Discussion #1759 – Missing `azurerm_resource_id`](https://github.com/tomkerkhove/promitor/discussions/1759)
-```
+- [Discussion #1751 – Metric Name Confusion](https://github.com/tomkerkhove/promitor/discussions/1751)
+- [Discussion #1759 – Missing `azurerm_resource_id`](https://github.com/tomkerkhove/promitor/discussions/1759)
 
 ### 📚 Resources
 - 📘 [Promitor GitHub Repository](https://github.com/tomkerkhove/promitor)
