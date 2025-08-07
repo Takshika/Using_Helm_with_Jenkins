@@ -27,11 +27,12 @@ This repository sets up a Promitor pod using a Helm chart and a custom `metric-d
 ## 🧭 Project Flow
 
 Here's a high-level view of how the pipeline works:
-
+```
 Jenkins Pipeline
 └── Stage 1: Clone Promitor Helm Chart
 └── Stage 2: Install Promitor via Helm with custom metrics
 └── Stage 3: Validate deployment (pod status, config files)
+```
 
 ## 🔧 Prerequisites
 
@@ -93,8 +94,6 @@ Within minutes, Promitor will expose those metrics to Prometheus
 - 📘 [Azure Monitor Metrics](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics)
 - 📘 [Helm Charts Documentation](https://helm.sh/docs/)
 - 📘 [Jenkins Pipeline Guide](https://www.jenkins.io/doc/book/pipeline/)
-
-## Guide
 
 ## 🙌 Contributing
 If you found this useful or have suggestions, feel free to fork, contribute, or raise issues! Pull requests are welcome.
