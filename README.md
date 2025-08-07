@@ -6,7 +6,7 @@ This repository sets up a Promitor pod using a Helm chart and a custom `metric-d
 
 ---
 
-## 🧠 What This Does
+### 🧠 What This Does
 
 - Creates a **Promitor pod** using Helm
 - Automates deployment with a **Jenkins pipeline**
@@ -15,7 +15,7 @@ This repository sets up a Promitor pod using a Helm chart and a custom `metric-d
 
 ---
 
-## 🎯 Why Use This
+### 🎯 Why Use This
 
 - Automates infrastructure monitoring setup using CI/CD
 - Monitors **Azure resources** using Promitor and exposes metrics
@@ -24,7 +24,7 @@ This repository sets up a Promitor pod using a Helm chart and a custom `metric-d
 
 ---
 
-## 🧭 Project Flow
+### 🧭 Project Flow
 
 Here's a high-level view of how the pipeline works:
 ```
@@ -34,7 +34,7 @@ Jenkins Pipeline
 └── Stage 3: Validate deployment (pod status, config files)
 ```
 
-## 🔧 Prerequisites
+### 🔧 Prerequisites
 
 - A running Kubernetes cluster (e.g., AKS or Minikube)
 - Jenkins with:
@@ -43,23 +43,23 @@ Jenkins Pipeline
 - Helm installed
 - Azure credentials configured
 
-## 📥 Clone the Repo
+### 📥 Clone the Repo
 ```
 git clone https://github.com/Takshika/Using_Helm_with_Jenkins.git  
 cd Using_Helm_with_Jenkins
 ```
 
-## 🛠 Configure Jenkins
+### 🛠 Configure Jenkins
 Place the Jenkinsfile in your Jenkins job or multibranch pipeline.
 Make sure Kubernetes CLI (kubectl) and Helm are available in the Jenkins agent/container.
 Set any needed credentials for Azure access using environment variables or credentials bindings.
 
-## 🧾 Edit Metric Declaration
+### 🧾 Edit Metric Declaration
 Open the metric-declaration.yaml file.
 Customize it to define the Azure metrics you want to monitor.
 This file defines what Promitor scrapes and how the data is exposed.
 
-## 📁 Folder Structure
+### 📁 Folder Structure
 ```
 Using_Helm_with_Jenkins/ 
 ├── Jenkinsfile # CI/CD pipeline stages 
@@ -67,7 +67,7 @@ Using_Helm_with_Jenkins/
 ├── helm-deploy.sh # Shell script for Helm actions ``` 
 ```
 
-## ❗ Known Issues Faced
+### ❗ Known Issues Faced
 While building this integration, I faced the following issues and documented them so others can avoid the same roadblocks:
 
 🔎 Discussion #1751 – Metric Name Confusion
@@ -81,22 +81,22 @@ The azurerm_resource_id label was not appearing in the metrics output.
 Resolution: Confirm correct scraping logic and Helm values file setup to ensure the label is included.
 
 
-# 🔍 Example Use Case
+### 🔍 Example Use Case
 Want to monitor an Azure Storage Account's capacity?
 Add a resourceDiscoveryGroup in metric-declaration.yaml
 Define the metrics to scrape
 Run the Jenkins pipeline
 Within minutes, Promitor will expose those metrics to Prometheus
 
-## 📚 Resources
+### 📚 Resources
 - 📘 [Promitor GitHub Repository](https://github.com/tomkerkhove/promitor)
 - 📘 [Promitor Documentation](https://promitor.io/)
 - 📘 [Azure Monitor Metrics](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics)
 - 📘 [Helm Charts Documentation](https://helm.sh/docs/)
 - 📘 [Jenkins Pipeline Guide](https://www.jenkins.io/doc/book/pipeline/)
 
-## 🙌 Contributing
+### 🙌 Contributing
 If you found this useful or have suggestions, feel free to fork, contribute, or raise issues! Pull requests are welcome.
 
-## 🙏 Acknowledgements
+### 🙏 Acknowledgements
 Special thanks to Tom Kerkhove, the creator and maintainer of Promitor, for building and maintaining such an insightful open-source project.
